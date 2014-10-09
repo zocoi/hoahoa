@@ -1,0 +1,46 @@
+
+<template name="UsersIndex">
+  <div class="btn-toolbar">
+    <button class="btn btn-primary">New User</button>
+    <button class="btn">Import</button>
+    <button class="btn">Export</button>
+  </div>
+  
+  <div class="well">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+        <tr>
+          {{#with profile}}
+            <td>
+              {{firstName}} {{lastName}}
+            </td>
+            <td>
+
+            </td>
+          {{/with}}
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Delete Confirmation</h3>
+      </div>
+      <div class="modal-body">
+          <p class="error-text">Are you sure you want to delete the user?</p>
+      </div>
+      <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+          <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+      </div>
+  </div>
+</template>

@@ -1,0 +1,52 @@
+
+<template name="GroupsShow">
+  <h1>{{name}}</h1>
+
+
+  {{#bootstrapTabs tabs=tabs}}
+
+    {{#tabContent slug="messages"}}
+      <h2>Things</h2>
+      <button class="add-things">
+        Add Things
+      </button>
+    {{/tabContent}}
+
+    {{#tabContent slug="documents"}}
+      <div>
+        <h2 id="documents">Documents</h2>
+        {{#each documents}}
+          {{> uploadedFile}}
+        {{/each}}
+      </div>
+      <div>
+        <h2 id="upload">Upload</h2>
+        <div id="dropzone" class="dropzone well">
+          <div style="text-align: center; color: gray;">Drop file to upload</div>
+          <input type="file" multiple class="documents">
+        </div>
+      </div>
+    {{/tabContent}}
+
+    {{#tabContent slug="people"}}
+      <h2>People</h2>
+      <button class="add-things">
+        Add Things
+      </button>
+    {{/tabContent}}
+
+  {{/bootstrapTabs}}
+
+</template>
+
+<template name="uploadedFile">
+  <h4>{{#with this.url}}<a href="{{this}}" target="_blank">{{../name}}</a>{{else}}{{this.name}}{{/with}} ({{this.size}} bytes)</h4>
+  {{#if this.isUploaded}}
+  {{#with this.url download=true}}
+  <a href="{{this}}" class="btn btn-default btn-xs" role="button">Download</a>
+  {{/with}}
+  {{> FS.DeleteButton class="btn btn-danger btn-xs"}}
+  {{else}}
+  <p>{{> FS.UploadProgressBar semantic=true}} Uploading...</p>
+  {{/if}}
+</template>

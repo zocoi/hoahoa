@@ -1,0 +1,29 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+iron:router
+ian:accounts-ui-bootstrap-3
+cfs:standard-packages
+cfs:gridfs
+raix:ui-dropped-event
+cfs:ui
+coffeescript
+accounts-base
+accounts-google
+accounts-facebook
+accounts-password
+aldeed:autoform
+aldeed:collection2
+yogiben:admin
+yogiben:alerts
+aldeed:console-me
+
+twbs:bootstrap
+fortawesome:fontawesome
+dburles:collection-helpers
+zimme:iron-router-active
+templates:tabs

@@ -1,0 +1,25 @@
+<template name="bootstrapTabs">
+  <div class="bootstrapTabs-container {{name}}">
+
+    <!-- Allow for the active tab to be specified in a parent helper -->
+    {{#if activeTab}}
+      {{trackActiveTab activeTab}}
+    {{/if}}
+
+    <ul class="nav nav-tabs tabs-list">
+      {{#each tabs}}
+        <li class="tab-item {{isActiveTab slug}}" role="presentation"><a>{{name}}</a></li>
+      {{/each}}
+    </ul>
+    <div class="tabs-content-container">
+
+      <!-- Pass interface context to tab instances -->
+      {{> UI.contentBlock
+          context=__context__
+      }}
+
+    </div>
+
+  </div>
+
+</template>
