@@ -2,6 +2,13 @@
 <template name="GroupsShow">
   <h1>{{name}}</h1>
 
+  <iframe id="forum_embed"
+   src="javascript:void(0)"
+   scrolling="no"
+   frameborder="0"
+   width="900"
+   height="700">
+  </iframe>
 
   {{#bootstrapTabs tabs=tabs}}
 
@@ -10,6 +17,8 @@
       <button class="add-things">
         Add Things
       </button>
+
+
     {{/tabContent}}
 
     {{#tabContent slug="documents"}}
