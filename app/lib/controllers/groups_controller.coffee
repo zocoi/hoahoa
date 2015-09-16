@@ -15,7 +15,10 @@ class @GroupsController extends RouteController
   onRerun: ->
     @next()
   onBeforeAction: ->
-    @next()
+    unless Meteor.userId()
+      @redirect 'home'
+    else
+      @next()
 
   action: ->
     @render()
