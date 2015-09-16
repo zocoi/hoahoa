@@ -14,7 +14,6 @@ cfs:ui
 coffeescript
 accounts-base
 accounts-google
-accounts-facebook
 accounts-password
 aldeed:autoform
 aldeed:collection2
@@ -25,5 +24,4 @@ aldeed:console-me
 twbs:bootstrap
 fortawesome:fontawesome
 dburles:collection-helpers
-zimme:iron-router-active
-templates:tabs
+zimme:active-route
