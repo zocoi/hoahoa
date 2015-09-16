@@ -22,3 +22,8 @@ Template.registerHelper 'niceName', (_id)->
     else
       'A user'
 
+Template.registerHelper 'currentGroup', ->
+  user = Meteor.user()
+  if user
+    user.group()
+

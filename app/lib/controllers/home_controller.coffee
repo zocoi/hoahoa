@@ -1,7 +1,18 @@
-HomeController = RouteController.extend(
+class @HomeController extends RouteController
   layoutTemplate: 'MasterLayout'
-  subscriptions: ->
+  waitOn: ->
+    [
+      @subscribe 'currentGroup'
+    ]
+  onBeforeAction: ->
+    if Meteor.userId()
+      currentUser = Meteor.user()
+      group = currentUser.group()
+      @redirect 'groups.show', slug: group.slug
+    else
+      @next()
+
   action: ->
     @render 'Home'
     return
-)
+

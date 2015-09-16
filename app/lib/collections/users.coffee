@@ -17,6 +17,18 @@ Schemas.UserProfile = new SimpleSchema(
   lastName:
     type: String
     optional: true
+
+  homePhone:
+    type: String
+    optional: true
+
+  cellPhone:
+    type: String
+    optional: true
+
+  address:
+    type: String
+    optional: true
 )
 
 Schemas.User = new SimpleSchema(
@@ -46,6 +58,17 @@ Schemas.User = new SimpleSchema(
     type: [String]
     blackbox: true
     optional: true
+
+  groupId:
+    type: String
+    regEx: SimpleSchema.RegEx.Id
+    optional: true
+    autoform:
+      options: ->
+        Meteor.subscribe("groups")
+        _.map Groups.find().fetch(), (group)->
+          label: group.name
+          value: group._id
 )
 
 Meteor.users.attachSchema Schemas.User
@@ -53,5 +76,8 @@ Meteor.users.attachSchema Schemas.User
 Meteor.users.helpers(
   fullName: ->
     return @profile.firstName + ' ' + @profile.lastName
+  group: ->
+    group = Groups.findOne()
+    return group if group && group.id == @groupId
 )
 

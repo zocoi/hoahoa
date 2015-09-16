@@ -11,7 +11,7 @@
         </button>
         <a class="navbar-brand" href="{{pathFor 'home'}}">
           <i class="fa fa-building-o"></i>
-          Hoagie
+          999 Hoagies
         </a>
       </div>
 
@@ -35,7 +35,11 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="{{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}"><i class="fa fa-home"></i> Home</a></li>
-          <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'home' }}"><i class="fa fa-gear"></i> Dashboard</a></li>
+          <li class="{{ isActiveRoute regex='groups.messages' }}">
+            <a href="{{ pathFor 'groups.messages' slug=currentGroup.slug}}">
+              <i class="fa fa-gear"></i>Messages
+            </a>
+          </li>
         </ul>
       </div>
 
