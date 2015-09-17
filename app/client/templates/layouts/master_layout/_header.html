@@ -37,7 +37,17 @@
           <li class="{{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}"><i class="fa fa-home"></i> Home</a></li>
           <li class="{{ isActiveRoute regex='groups.messages' }}">
             <a href="{{ pathFor 'groups.messages' slug=currentGroup.slug}}">
-              <i class="fa fa-gear"></i>Messages
+              <i class="fa fa-comment"></i> Messages
+            </a>
+          </li>
+          <li class="{{ isActiveRoute regex='groups.documents' }}">
+            <a href="{{ pathFor 'groups.documents' slug=currentGroup.slug}}">
+              <i class="fa fa-file-text"></i> Documents
+            </a>
+          </li>
+          <li class="{{ isActiveRoute regex='groups.members' }}">
+            <a href="{{ pathFor 'groups.members' slug=currentGroup.slug}}">
+              <i class="fa fa-users"></i> Members
             </a>
           </li>
         </ul>

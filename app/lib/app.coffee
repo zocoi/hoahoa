@@ -6,10 +6,6 @@
   adminEmails: ['hung.dao@me.com', 'mephis1987@gmail.com']
   collections: {
     # Documents: {}
-    Homes:
-      tableColumns: [
-        {label: 'Unit', name: 'name'}
-      ]
     Groups:
       tableColumns: [
         {label: 'Name', name: 'name'}
@@ -17,3 +13,4 @@
       auxCollections: ['Meteor.users']
   }
 }
+

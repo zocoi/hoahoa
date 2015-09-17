@@ -1,14 +1,14 @@
 Schemas = {}
 
 Schemas.UserProfile = new SimpleSchema(
-  picture:
-    type: String
-    optional:true
-    label: 'Profile picture'
-    autoform:
-      afFieldInput:
-        type: 'fileUpload'
-        collection: 'ProfilePictures'
+  # picture:
+  #   type: String
+  #   optional:true
+  #   label: 'Profile picture'
+  #   autoform:
+  #     afFieldInput:
+  #       type: 'fileUpload'
+  #       collection: 'ProfilePictures'
 
   firstName:
     type: String
@@ -75,9 +75,9 @@ Meteor.users.attachSchema Schemas.User
 
 Meteor.users.helpers(
   fullName: ->
-    return @profile.firstName + ' ' + @profile.lastName
+    console.log "@profile", @
+    @profile.firstName + ' ' + @profile.lastName
   group: ->
-    group = Groups.findOne()
-    return group if group && group.id == @groupId
+    group = Groups.findOne(@groupId)
 )
 

@@ -3,11 +3,16 @@ class @GroupsController extends RouteController
   subscriptions: ->
 
   waitOn: ->
-    @subscribe('currentGroup')
+    [
+      @subscribe('currentGroup'),
+      @subscribe('userData')
+    ]
+
 
   data: ->
     return unless @ready()
     group = Meteor.user().group()
+    console.log "group", group, Meteor.user()
     group
 
   onRun: ->

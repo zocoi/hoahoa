@@ -2,11 +2,12 @@ class @HomeController extends RouteController
   layoutTemplate: 'MasterLayout'
   waitOn: ->
     [
+      @subscribe 'userData'
       @subscribe 'currentGroup'
     ]
   onBeforeAction: ->
-    if Meteor.userId()
-      currentUser = Meteor.user()
+    currentUser = Meteor.user()
+    if currentUser
       group = currentUser.group()
       @redirect 'groups.show', slug: group.slug
     else
@@ -15,4 +16,3 @@ class @HomeController extends RouteController
   action: ->
     @render 'Home'
     return
-

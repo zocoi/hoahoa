@@ -21,3 +21,8 @@ Router.route '/groups/:slug/messages',
   name: 'groups.messages'
   controller: 'GroupsMessagesController'
   where: 'client'
+
+Router.route '/groups/:slug/documents',
+  name: 'groups.documents'
+  controller: 'GroupsDocumentsController'
+  where: 'client'

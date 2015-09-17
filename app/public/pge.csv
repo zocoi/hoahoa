@@ -1,0 +1,27 @@
+﻿Name,HUNG DAO
+Address,"999 WISCONSIN ST 4, SAN FRANCISCO, CA 94107"
+Account Number,8033018810
+Service,8033018507
+
+TYPE,START DATE,END DATE,USAGE,UNITS,COST,NOTES
+Electric billing,2014-01-11,2014-02-04,158.00,kWh,$20.95,
+Electric billing,2014-02-05,2014-03-06,170.00,kWh,$22.67,
+Electric billing,2014-03-07,2014-04-04,166.00,kWh,$22.67,
+Electric billing,2014-04-05,2014-05-06,163.00,kWh,$22.26,
+Electric billing,2014-05-07,2014-06-05,269.00,kWh,$37.56,
+Electric billing,2014-06-06,2014-07-07,192.00,kWh,$26.22,
+Electric billing,2014-07-08,2014-08-05,173.00,kWh,$23.95,
+Electric billing,2014-08-06,2014-09-05,226.00,kWh,$33.51,
+Electric billing,2014-09-06,2014-10-06,218.00,kWh,$32.39,
+Electric billing,2014-10-07,2014-11-04,231.00,kWh,$35.95,
+Electric billing,2014-11-05,2014-12-05,356.00,kWh,$57.88,
+Electric billing,2014-12-06,2015-01-05,601.00,kWh,$128.05,
+Electric billing,2015-01-06,2015-02-04,360.00,kWh,$63.27,
+Electric billing,2015-02-05,2015-03-06,257.00,kWh,$41.77,
+Electric billing,2015-03-07,2015-04-06,295.00,kWh,$49.06,
+Electric billing,2015-04-07,2015-05-06,345.00,kWh,$61.04,
+Electric billing,2015-05-07,2015-06-05,289.00,kWh,$50.58,
+Electric billing,2015-06-06,2015-07-06,233.00,kWh,$38.54,
+Electric billing,2015-07-07,2015-08-04,239.00,kWh,$39.98,
+Electric billing,2015-08-05,2015-09-03,186.00,kWh,$30.54,
+Electric billing,2015-09-04,2015-10-05,206.00,kWh,$34.46,

@@ -1,43 +1,38 @@
-ReactiveTabs.createInterface
-  template: 'bootstrapTabs'
-  onChange: (slug, template) ->
-    console.log('[tabs] Tab has changed! Current tab:', slug)
-    console.log('[tabs] Template instance calling onChange:', template)
+getRandomInt = (min, max) ->
+  Math.floor(Math.random() * (max - min + 1)) + min
 
-uploadHandler = ->
-  console.log "uploadHandler called"
-  FS.EventHandlers.insertFiles(Documents, {
-    metadata: (fileObj) ->
-      return {
-        owner: Meteor.userId()
-        foo: "bar"
-      }
-    after: (error, fileObj) ->
-      unless error
-        console.log("Inserted", fileObj.name())
-  })
-
-# GroupsShow: Event Handlers and Helpers
-Meteor.startup ->
-  Template.GroupsShow.events
-    'dropped #dropzone': uploadHandler()
-    'change input.documents': uploadHandler()
-
+People = new (Meteor.Collection)('people')
 
 Template.GroupsShow.helpers
   documents: ->
     Documents.find()
-  tabs: ->
-    return [
-      { name: 'Messages', slug: 'messages' }
-      { name: 'Documents', slug: 'documents' }
-      { name: 'People', slug: 'people' }
-    ]
 
 # GroupsShow: Lifecycle Hooks
 Template.GroupsShow.created = ->
   console.log "created", Template.GroupsShow
 
 Template.GroupsShow.rendered = ->
+  console.log d3.csv.parse("/pge.csv")
+  # chart = nv.models.multiBarChart().margin(left: 100).useInteractiveGuideline(true).transitionDuration(350).showLegend(true).showYAxis(true).showXAxis(true)
+  # nv.addGraph ->
+  #   chart.xAxis.axisLabel('Amount').tickFormat d3.format('d')
+  #   chart.yAxis.axisLabel('Months').tickFormat d3.format('d')
+  #   d3.select('#chart svg').datum([ {
+  #     values: People.find().fetch()
+  #     key: 'Age'
+  #   } ]).call chart
+  #   nv.utils.windowResize ->
+  #     chart.update()
+  #     return
+  #   chart
+  # @autorun ->
+  #   d3.select('#chart svg').datum([ {
+  #     values: People.find().fetch()
+  #     key: 'Age'
+  #   } ]).call chart
+  #   chart.update()
+  #   return
+  # nv.utils.windowResize(chart.update);
+  # return
 
 Template.GroupsShow.destroyed = ->
