@@ -12,7 +12,23 @@ Template.GroupsShow.created = ->
   console.log "created", Template.GroupsShow
 
 Template.GroupsShow.rendered = ->
-  console.log d3.csv.parse("/pge.csv")
+  console.log "pge data", d3.csv.parse("/pge.csv")
+  nv.addGraph ->
+    chart = nv.models.multiBarChart()
+    chart.xAxis
+        .tickFormat(d3.format(',f'))
+    chart.yAxis
+        .tickFormat(d3.format(',.1f'))
+
+    d3.select('#chart svg')
+        .transition().duration(500)
+        .call(chart)
+        ;
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+
   # chart = nv.models.multiBarChart().margin(left: 100).useInteractiveGuideline(true).transitionDuration(350).showLegend(true).showYAxis(true).showXAxis(true)
   # nv.addGraph ->
   #   chart.xAxis.axisLabel('Amount').tickFormat d3.format('d')

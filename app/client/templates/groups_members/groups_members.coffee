@@ -13,6 +13,8 @@ TabularTables.Members = new Tabular.Table({
     }
     {data: "profile.firstName", title: "First Name"},
     {data: "profile.lastName", title: "Last Name"},
+    {data: "profile.homePhone", title: "Home Phone"},
+    {data: "profile.cellPhone", title: "Mobile"},
     {
       data: "groupId", title: "HOA",
       render: (val) ->
